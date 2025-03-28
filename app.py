@@ -8,6 +8,7 @@ import pandas as pd
 import geopandas as gpd
 from shapely.geometry import Point
 import osmnx as ox
+import os
 
 # Function for creating Scatter Maps
 def create_scatter_mapbox(df, lat, lon, color, hover_name, hover_data, title, zoom_level, center_lat, center_lon, mapbox_style, admin):
@@ -748,4 +749,5 @@ def update_map(census_filter):
         return fig_women
 
 if __name__ == '__main__':
-    app.run(debug=False, port=8050)
+    port = int(os.environ.get('PORT', 8050)) # for Heroku deployment
+    app.run(debug=False, host='0.0.0.0', port=port) # for local deployment, use app.run_server(debug=True)
