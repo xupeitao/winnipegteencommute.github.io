@@ -1,5 +1,8 @@
 dash
-plotly
+dash-bootstrap-components
+plotly_express
 pandas
-numpy
-flask
+geopandas
+shapely
+osmnx
+gunicorn
