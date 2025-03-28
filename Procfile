@@ -1,1 +1,1 @@
-web: python its_project_wtc.py
+web: python app.py
